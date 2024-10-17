@@ -26,8 +26,8 @@ def load_data():
     return newsgroups.data, newsgroups.target
 
 # Preprocess text
-nltk.download('stopwords')
-nltk.download('wordnet')
+nltk.download('stopwords', quiet=True)
+nltk.download('wordnet', quiet=True)
 
 def preprocess_text(docs):
     lemmatizer = WordNetLemmatizer()
