@@ -16,4 +16,4 @@ This is a demo paper presented in the 29th International Conference on Natural L
 Please read the CWordTM's documentation from ReadtheDocs.
 
 ## Contact
-The author (Johnny Cheng, Dr.) of this application, the toolkit CWordTM, and the associated demo paper can be reached through the [email](drjohnnycheng@gmail.com).
+The author (Johnny Cheng, Dr.) of this application, the toolkit CWordTM, and the associated demo paper can be reached through the email: drjohnnycheng@gmail.com
