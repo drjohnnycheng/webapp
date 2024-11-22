@@ -13,3 +13,7 @@ Please read the [GitHub pages](https://github.com/drjohnnycheng/cwordtm).
 This is a demo paper presented in the 29th International Conference on Natural Language & Information Systems (NLDN 2024) in late June 2024.
 
 ## [CWordTM Documentation](https://cwordtm.readthedocs.io)
+Please read the CWordTM's documentation from ReadtheDocs.
+
+## Contact
+The author (Johnny Cheng, Dr.) of this application, the toolkit CWordTM, and the associated demo paper can be reached through the [email](drjohnnycheng@gmail.com).
