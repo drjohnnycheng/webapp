@@ -1,5 +1,5 @@
 ﻿## NLP Tasks with CWordTM ##
-# Last updated: 23-Nov-2024
+# Last updated: 23-Nov-2024, 24-Dec-2024
 
 # Dependencies
 import streamlit as st
@@ -352,7 +352,7 @@ def main():
 
         elif ds_opt == 2:  # Other Dataset
             oth_label = "Upload Data File"
-            oth_file = st.sidebar.file_uploader(oth_label, type=["csv"])
+            oth_file = st.sidebar.file_uploader(oth_label, type=["csv", "txt"])
             change_label_style(oth_label, '20px', 'blue', 'Cambria')
             oth_opt = oth_file.name if oth_file is not None else 0
 
@@ -478,11 +478,11 @@ def main():
             else:  # Other Dataset
                 if oth_opt != 0:
                     lim = 500  # Limit the no of source sentences
-                    # odf = util.load_text(oth_opt, info=True, timing=True)
-                    odf = util.load_csv(oth_file, nr=lim, info=True, code=show_code)
-                    text_list = util.get_text_list(odf, text_col='Text', code=show_code)
-                    func = viz.show_wordcloud if bi_opt == 0 else viz.chi_wordcloud
-                    fig = func(text_list, bg='black', image=mask_opt, web_app=True, code=show_code)
+                    load_func = util.load_csv if oth_file.name.split('.')[-1] == 'csv' else util.load_text
+                    odf = load_func(oth_file.name, nr=lim, info=True, code=show_code)
+                    text_list = util.get_text_list(odf, text_col='text', code=show_code)
+                    wc_func = viz.show_wordcloud if bi_opt == 0 else viz.chi_wordcloud
+                    fig = wc_func(text_list, bg='black', image=mask_opt, web_app=True, code=show_code)
                     wordcloud(fig)
                 else:
                     st.sidebar.write("No file selected!")
@@ -523,10 +523,10 @@ def main():
             else:  # Other Dataset
                 if oth_opt != 0:
                     lim = 500  # Limit the no of source sentences
-                    # odf = util.load_text(oth_opt, info=True, timing=True)
-                    odf = util.load_csv(oth_file, nr=lim, info=True, code=show_code)
+                    load_func = util.load_csv if oth_file.name.split('.')[-1] == 'csv' else util.load_text
+                    odf = load_func(oth_file.name, nr=lim, info=True, code=show_code)
                     if bi_opt == 0:  # English
-                        text_list = util.get_text_list(odf, text_col='Text', code=show_code)
+                        text_list = util.get_text_list(odf, text_col='text', code=show_code)
                         summary = ta.summary_en(text_list, sent_len=sent_opt, code=show_code)
                     else:  # Chinese
                         summary = ta.summary_chi(odf, sent_len=sent_opt, code=show_code)
@@ -577,8 +577,8 @@ def main():
                 if oth_opt != 0:
                     chi_flag = False if bi_opt == 0 else True 
                     lim = 500  # Limit the no of source sentences
-                    tmm = tm_func(oth_file, num_topics=topics_opt, source=1,
-                                  text_col='Text', doc_size=lim, chi=chi_flag,
+                    tmm = tm_func(oth_file.name, num_topics=topics_opt, source=1,
+                                  text_col='text', doc_size=lim, chi=chi_flag,
                                   eval=scores_opt, timing=True, code=show_code)
                     if tm_opt == 0:
                         html_string = pyLDAvis.prepared_data_to_html(tmm.vis_data)
