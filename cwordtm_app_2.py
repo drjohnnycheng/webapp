@@ -592,7 +592,7 @@ def main():
     st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
     # st.sidebar.markdown('''<small>[Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | Johnny Cheng | Nov 2024 | [CWordTM](https://github.com/drjohnnycheng/cwordtm)</small>''', unsafe_allow_html=True)
     # st.sidebar.markdown('''[App Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | Nov 2024 | <br>Johnny Cheng | [CWordTM](https://github.com/drjohnnycheng/cwordtm)''', unsafe_allow_html=True)
-    st.sidebar.markdown('''<small>[Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | Author | Jan 2025 | [CWordTM](https://github.com/drjohnnycheng/cwordtm)</small>''', unsafe_allow_html=True)
+    st.sidebar.markdown('''<small>[Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | [CWordTM](https://github.com/drjohnnycheng/cwordtm) | Jan 2025</small>''', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
