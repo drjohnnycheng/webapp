@@ -1,4 +1,4 @@
-streamlit==1.39.0
+streamlit==1.41.0
 streamlit_modal==0.1.2
 nltk==3.8.1
 pyLDAvis==3.4.1
