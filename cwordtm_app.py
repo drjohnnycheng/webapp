@@ -360,7 +360,7 @@ def show_exegesis(opt, book, chap, verse):
                     EChap>={chap} and ESec>={verse}"
 
     comments = pd.read_sql_query(sql, db_conn)
-    st.write(comments.iloc[0].Content)
+    st.text(comments.iloc[0].Content)
 
 @st.dialog("Scripture Browsing")
 def scripture_browsing(scdf):
