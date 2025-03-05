@@ -1,0 +1,12 @@
+﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.0)
+Help Page 協助指引 (Updated 更新日期 : 5 March 2025)
+
+Main Menu 選單
+
+1. Show Module Code (Python) 展示個別模組程式碼
+2. Scripture Statistics 經文統計數據
+3. Quotes from Old Testament (OT) 新約經文引用舊約經文
+4. Wordcloud 文字雲
+5. Text Summary 文字摘要
+6. Topic Modeling (LDA, NMF, BERTopic) 主題建模
+7. Scripture Browsing with Exegesis 經文瀏覽 (附註解)
