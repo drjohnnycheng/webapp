@@ -1,12 +1,39 @@
-﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.0)
-Help Page 協助指引 (Updated 更新日期 : 5 March 2025)
+﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.1)
+Help Page 協助指引 (Updated 更新日期 : 13 March 2025)
 
 Main Menu 選單
 
 1. Show Module Code (Python) 展示個別模組程式碼
+   * This function shows the source code (program code) of a prescribed module function or all the functions of a prescribed module.
+   * 這功能顯示指定模組功能或指定模組所有功能的原始碼。
+
 2. Scripture Statistics 經文統計數據
+   * This function shows aggregated figures on the numbers of chapters and verses of Bible books and categories.
+   * 這功能顯示聖經書卷及書卷類別的章/節匯總數據。
+
 3. Quotes from Old Testament (OT) 新約經文引用舊約經文
+    * This function attempts to identify the relevant quoted OT scripture based on the prescribed NT verses.
+    * 這功能根據個別新約經文，嘗試尋找相關引用的舊約經文。
+
 4. Wordcloud 文字雲
+   * This function converts a prescribed scripture into a word cloud. (A word cloud is a visual representation (image) of word data.)
+   * 這功能將指定經文轉換為文字雲。(文字雲是關鍵詞的視覺化描述。)
+
 5. Text Summary 文字摘要
+   * This function extracts an important subset of the prescribed sentences / Bible scripture as a summary.
+   * 這功能從指定文章或經文抽取部份較為重要的句子作為摘要。
+
 6. Topic Modeling (LDA, NMF, BERTopic) 主題建模
+   * This function builds the prescribed topic model of the prescribed documents / Bible scripture.
+   * 這功能根據指定的文本/經文去建立指定的主題模型。
+
 7. Scripture Browsing with Exegesis 經文瀏覽 (附註解)
+   * This function provides the prescribed scripture for the user's browsing and display, if needed,the relevant book's or verses's exegesis.
+   * 這功能讓讀者瀏覽指定經文並按需要查閱有關書卷或經文的註解。
+
+
+* Remarks
+The exegesis shown from this website is extracted from the database downloaded from:
+(本網站顯示的所有經文註解的內容均從「信望愛信仰與聖經資源中心」網站下載)
+https://bible.fhl.net/
+[Downloaded Date: 11 March 2025]

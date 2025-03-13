@@ -1,8 +1,10 @@
 ﻿## Web App with CWordTM Toolkit ##
 # Last updated: 23-Nov-2024, 24-Dec-2024, 4-Jan-2025, 15-Jan-2025, 1-Feb-2025
 # 3-Mar-2025: Add 'Scripture Browsing' (from v4), 4-Mar-2025 (0.5.2)
-# 5-Mar-2025 (0.6.0) : Add 'Help' page
-# 6-Mar-2025
+# 5-Mar-2025 (0.6.0) : Add 'Help' page, 6-Mar-2025
+# 11-Mar-2025 (0.6.1): Update 'Comments' table
+# 13-Mar-2025 (0.6.2): Two DBs: Bible_v4.db & Bible_Comment.db
+##
 
 # Dependencies
 import streamlit as st
@@ -10,6 +12,7 @@ from streamlit import components
 from contextlib import contextmanager, redirect_stdout
 from io import StringIO, BytesIO
 import numpy as np
+import pandas as pd
 import cwordtm
 from cwordtm import *
 import pyLDAvis
@@ -17,7 +20,6 @@ import matplotlib.pyplot as plt
 import plotly
 import plotly.io as pio
 import sqlite3
-import pandas as pd
 
 
 bbc = "BBC News Train.csv"
@@ -347,7 +349,7 @@ def btm_viz(figs):
 
 
 def show_exegesis(opt, book, chap, verse):
-    db_conn = sqlite3.connect("Bible_v2.db")
+    db_conn = sqlite3.connect("Bible_v4.db")
     book_df = pd.read_sql_query("select * from Bible_Books", db_conn)
     engS = book_df[book_df.BookS==book].iloc[0].EngS
 
@@ -359,10 +361,13 @@ def show_exegesis(opt, book, chap, verse):
                     BChap<={chap} and BSec<={verse} and \
                     EChap>={chap} and ESec>={verse}"
 
-    comments = pd.read_sql_query(sql, db_conn)
+    comm_conn = sqlite3.connect("Bible_Comment.db")
+    comments = pd.read_sql_query(sql, comm_conn)
     if comments.empty:
         st.text("No exegesis found!")
     else:
+        #st.dataframe(comments)
+        #st.text(comments.iloc[-1].Content)
         st.text(comments.iloc[0].Content)
 
 @st.dialog("Scripture Browsing")
@@ -398,11 +403,11 @@ def scripture_browsing(scdf):
             menu_label = "Choose an option:"
             context_opt = st.selectbox(
                 menu_label,
-                ['None', 'Book Exegesis', 'Verse Exegesis']
+                ['<select>', 'Book Exegesis', 'Verse Exegesis']
             )
             # change_label_style(menu_label, '20px', 'blue', 'Cambria')
 
-            if context_opt != 'None':
+            if context_opt != '<select>':
                 show_exegesis(context_opt, scdf.iloc[0].book, scdf.iloc[0].chapter, selected_row[0]+1)
 
 
