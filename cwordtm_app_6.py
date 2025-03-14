@@ -370,7 +370,7 @@ def show_exegesis(opt, book, chap, verse):
         #st.text(comments.iloc[0].Content)
         exeg = ""
         for comm in comments.iloc:
-            if comm.Content[0] != '*':
+            if comm.Content[0].strip() != '*':
                 exeg += comm.Content + '\n'
         st.text(exeg)
 
