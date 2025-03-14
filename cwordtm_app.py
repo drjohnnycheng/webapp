@@ -1,9 +1,10 @@
-﻿## Web App with CWordTM Toolkit ##
+﻿## ﻿Text Analytics Platform 文本分析平台 (Version 0.6.3) ##
 # Last updated: 23-Nov-2024, 24-Dec-2024, 4-Jan-2025, 15-Jan-2025, 1-Feb-2025
 # 3-Mar-2025: Add 'Scripture Browsing' (from v4), 4-Mar-2025 (0.5.2)
 # 5-Mar-2025 (0.6.0) : Add 'Help' page, 6-Mar-2025
 # 11-Mar-2025 (0.6.1): Update 'Comments' table
 # 13-Mar-2025 (0.6.2): Two DBs: Bible_v4.db & Bible_Comment.db
+# 14-Mar-2025 (0.6.3): Change the name of the platform
 ##
 
 # Dependencies
@@ -829,7 +830,7 @@ if __name__ == "__main__":
         <h1 style="font-family: 'Cambria';
                    font-size: 36px;
                    color: blue;">
-        NLP Tasks with CWordTM (Version 0.6.0)
+        ﻿Text Analytics Platform 文本分析平台 (Version 0.6.3)
         </h1>
         """, unsafe_allow_html=True)
 
