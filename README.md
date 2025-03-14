@@ -1,4 +1,4 @@
-# Topic Modeling and Basic NLP Tasks with CWordTM
+# ﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.3)
 
 ## Overview
 This web application is a topic modeling toolkit with CWordTM (version 0.7.7). It is an application that offers a user interface to the major functions offered by CWordTM.
