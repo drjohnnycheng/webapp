@@ -371,7 +371,7 @@ def show_exegesis(opt, book, chap, verse):
         exeg = ""
         for comm in comments.iloc:
             if comm.Content[0].strip() != '*':
-                exeg += comm.Content + '\n'
+                exeg += "[" + comm.Content + ']\n'
         st.text(exeg)
 
 @st.dialog("Scripture Browsing")
