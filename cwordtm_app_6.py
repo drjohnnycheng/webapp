@@ -367,11 +367,11 @@ def show_exegesis(opt, book, chap, verse):
     if comments.empty:
         st.text("No exegesis found!")
     else:
-        #st.text(comments.iloc[0].Content)
         exeg = ""
         for comm in comments.iloc:
-            if comm.Content[0].strip() != '*':
-                exeg += "[" + comm.Content + ']\n'
+            item = comm.Content.strip()
+            if len(item) > 0 and item[0] != '*':
+                exeg += comm.Content + '\n'
         st.text(exeg)
 
 @st.dialog("Scripture Browsing")
