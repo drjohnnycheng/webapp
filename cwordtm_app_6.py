@@ -367,9 +367,12 @@ def show_exegesis(opt, book, chap, verse):
     if comments.empty:
         st.text("No exegesis found!")
     else:
-        #st.dataframe(comments)
-        #st.text(comments.iloc[-1].Content)
-        st.text(comments.iloc[0].Content)
+        #st.text(comments.iloc[0].Content)
+        exeg = ""
+        for comm in comments.iloc:
+            if comm.Content[0] != '*'
+	        exeg += comm.Content + '\n'
+        st.text(exeg)
 
 @st.dialog("Scripture Browsing")
 def scripture_browsing(scdf):
