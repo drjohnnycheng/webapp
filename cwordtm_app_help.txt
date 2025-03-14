@@ -1,5 +1,5 @@
-﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.1)
-Help Page 協助指引 (Updated 更新日期 : 13 March 2025)
+﻿CWordTM - Text Analytics Platform 文本分析平台 (Version 0.6.3)
+Help Page 協助指引 (Updated 更新日期 : 14 March 2025)
 
 Main Menu 選單
 
