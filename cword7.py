@@ -1,5 +1,5 @@
 ﻿#####
-## ﻿Text Analytics Platform 文本分析平台 (Version 0.7.0)
+## ﻿Text Analytics Platform 文本分析平台 (Version 0.7.1)
 #####
 #
 # Last updated: 23-Nov-2024, 24-Dec-2024
@@ -10,7 +10,7 @@
 # 13-Mar-2025 (0.6.2): Two DBs: Bible_v4.db & Bible_Comment.db
 # 14-Mar-2025 (0.6.3): Change the name of the platform
 # 16-Mar-2025 (0.6.4): Add caching mechanism for loading WEB
-# 17-Mar-2025 (0.7.0): Add fuzzy search; 18-Mar-2025
+# 17-Mar-2025 (0.7.0): Add fuzzy search; 18-Mar-2025, 19-Mar-2025 (0.7.1)
 #
 #####
 
@@ -951,7 +951,7 @@ if __name__ == "__main__":
         <h1 style="font-family: 'Cambria';
                    font-size: 32px;
                    color: blue;">
-        ﻿Text Analytics Platform 文本分析平台 (Version 0.7.0)
+        ﻿Text Analytics Platform 文本分析平台 (Version 0.7.1)
         </h1>
         """, unsafe_allow_html=True)
 
