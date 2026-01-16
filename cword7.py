@@ -946,7 +946,7 @@ def main():
         help_page()
 
     st.sidebar.markdown('''<hr>''', unsafe_allow_html=True)
-    st.sidebar.markdown('''<small>[Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | [CWordTM](https://github.com/drjohnnycheng/cwordtm) | March 2025</small>''', unsafe_allow_html=True)
+    st.sidebar.markdown('''<small>[Overview](https://github.com/drjohnnycheng/webapp/blob/main/README.md) | [CWordTM](https://github.com/drjohnnycheng/cwordtm) | January 2026</small>''', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
@@ -954,7 +954,7 @@ if __name__ == "__main__":
         <h1 style="font-family: 'Cambria';
                    font-size: 32px;
                    color: blue;">
-        ﻿Text Analytics Platform 文本分析平台 (Version 0.7.1)
+        ﻿Text Analytics Platform 文本分析平台 (Version 0.7.7)
         </h1>
         """, unsafe_allow_html=True)
 
