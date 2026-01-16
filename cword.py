@@ -32,6 +32,8 @@ import sqlite3
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
+import torch
+torch.classes.__path__ = []  # Added on 16-Jan-2026
 
 # Initial Settings
 bbc = "BBC News Train.csv"
