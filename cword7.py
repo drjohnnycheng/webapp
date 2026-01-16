@@ -1,5 +1,5 @@
 ﻿#####
-## ﻿Text Analytics Platform 文本分析平台 (Version 0.7.1)
+## ﻿Text Analytics Platform 文本分析平台 (Version 0.7.7)
 #####
 #
 # Last updated: 23-Nov-2024, 24-Dec-2024
@@ -11,6 +11,7 @@
 # 14-Mar-2025 (0.6.3): Change the name of the platform
 # 16-Mar-2025 (0.6.4): Add caching mechanism for loading WEB
 # 17-Mar-2025 (0.7.0): Add fuzzy search; 18-Mar-2025, 19-Mar-2025 (0.7.1)
+# 16-Jan-2026 (0.7.7): Correct bugs from ds_opt
 #
 #####
 
@@ -793,14 +794,7 @@ def main():
                            code=show_code)
 
         elif opt == 5:  # Word Cloud
-            if ds_opt == 0:  # BBC News
-                ndf = util.load_csv(bbc, doc_size=news_range, info=True)
-                text_list = util.get_text_list(ndf, text_col='text')
-                func = viz.show_wordcloud
-                fig = func(text_list, bg='black', image=mask_opt, web_app=True, code=show_code)
-                wordcloud(fig)
-
-            elif ds_opt == 1:  # Bible
+            if ds_opt == 0:  # Bible
                 bible = web if bi_opt == 0 else cuv
                 if bible == web:
                     df = wdf
@@ -821,6 +815,13 @@ def main():
                 fig = func(text_list, bg='black', image=mask_opt, web_app=True, code=show_code)
                 wordcloud(fig)
 
+            elif ds_opt == 1:  # BBC News
+                ndf = util.load_csv(bbc, doc_size=news_range, info=True)
+                text_list = util.get_text_list(ndf, text_col='text')
+                func = viz.show_wordcloud
+                fig = func(text_list, bg='black', image=mask_opt, web_app=True, code=show_code)
+                wordcloud(fig)
+
             else:  # Other Dataset
                 if oth_opt != 0:
                     lim = 500  # Limit the no of source sentences
@@ -834,13 +835,7 @@ def main():
 
         elif opt == 6:  # Text Summary
             source_docs = None
-            if ds_opt == 0:  # BBC News
-                ndf = util.load_csv(bbc, doc_size=news_range, info=True)
-                text_list = util.get_text_list(ndf, text_col='text')
-                summary = ta.summary_en(text_list, sent_len=sent_opt, code=show_code)
-                source_docs = ndf.iloc[news_range[0]-1:news_range[1]]
-
-            elif ds_opt == 1:  # Bible
+            if ds_opt == 0:  # Bible
                 bible = web if bi_opt == 0 else cuv
                 if bible == web:
                     df = wdf
@@ -866,6 +861,12 @@ def main():
 
                 source_docs = scdf.reset_index(drop=True)
 
+            elif ds_opt == 1:  # BBC News
+                ndf = util.load_csv(bbc, doc_size=news_range, info=True)
+                text_list = util.get_text_list(ndf, text_col='text')
+                summary = ta.summary_en(text_list, sent_len=sent_opt, code=show_code)
+                source_docs = ndf.iloc[news_range[0]-1:news_range[1]]
+
             else:  # Other Dataset
                 if oth_opt != 0:
                     lim = 500  # Limit the no of source sentences
@@ -890,13 +891,7 @@ def main():
             tm_func = tm_funcs[tm_opt]
 
             topics_opt = int(topics_opt)
-            if ds_opt == 0:  # BBC News
-                tmm = tm_func(bbc, num_topics=topics_opt, source=1,
-                              text_col='text', doc_size=news_range,
-                              eval=scores_opt, web_app=True,
-                              timing=True, code=show_code)
-
-            elif ds_opt == 1:  # Bible
+            if ds_opt == 0:  # Bible
                 bible = web if bi_opt == 0 else cuv
                 if bible == web:
                     df = wdf
@@ -912,6 +907,12 @@ def main():
                 tmm = tm_func(bible, num_topics=topics_opt,
                               text_col='text', cat=tm_cat, eval=scores_opt,
                               web_app=True, timing=True, code=show_code)
+
+            elif ds_opt == 1:  # BBC News
+                tmm = tm_func(bbc, num_topics=topics_opt, source=1,
+                              text_col='text', doc_size=news_range,
+                              eval=scores_opt, web_app=True,
+                              timing=True, code=show_code)
 
             else:  # Other Corpus
                 if oth_opt != 0:
